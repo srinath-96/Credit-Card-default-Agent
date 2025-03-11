@@ -110,7 +110,7 @@ class ModelingTool(Tool):
 
         10. Stop the run once the outputs have been displayed and the task has been completed.
         """
-        os.environ["GEMINI_API_KEY"]='AIzaSyCxr4mmy9G7ikhes6PDmp2gksYPXA9k1Jo'
+        os.environ["GEMINI_API_KEY"]='I am not stupid'
         model=LiteLLMModel(model_id='gemini/gemini-2.0-flash')
         # Run the modeling agent with the dataframe directly
         modeling_agent = CodeAgent(
