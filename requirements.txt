@@ -1,0 +1,12 @@
+streamlit
+pandas
+numpy
+PyPDF2
+smolagents==1.9.2  # Adjust version as necessary
+langchain-community
+duckduckgo-search
+plotly
+h2o
+ucimlrepo
+python-dotenv
+
