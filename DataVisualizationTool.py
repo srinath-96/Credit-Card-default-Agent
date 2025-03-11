@@ -111,7 +111,7 @@ class DataVisualizationTool(Tool):
         # Step 5: Confirmation
         print("Visualizations saved: target_distribution.png (Plotly), boxplot_feature1.png (Matplotlib), correlation_heatmap.png (Plotly)")
         """
-        os.environ["GEMINI_API_KEY"]='AIzaSyCxr4mmy9G7ikhes6PDmp2gksYPXA9k1Jo'
+        os.environ["GEMINI_API_KEY"]='Use your own'
         model=LiteLLMModel(model_id='gemini/gemini-2.0-flash')
         # Run the visualization agent with the dataframe directly
         visualization_agent = CodeAgent(
