@@ -99,7 +99,7 @@ def credit_risk_assistant(dataframe):
     modeling_tool = ModelingTool()  # Assuming capped at 3 steps
     retriever_tool = RetrieverTool(pdf_directory="/Users/srinathmurali/Desktop/untitled folder 2")
     search = DuckDuckGoSearchTool()
-    os.environ["GEMINI_API_KEY"]='AIzaSyCxr4mmy9G7ikhes6PDmp2gksYPXA9k1Jo'
+    os.environ["GEMINI_API_KEY"]='I was too lazy to use a .env'
     model=LiteLLMModel(model_id='gemini/gemini-2.0-flash')
     primary_agent = CodeAgent(
         tools=[visualization_tool, modeling_tool, retriever_tool, search],
