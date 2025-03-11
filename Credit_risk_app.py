@@ -16,7 +16,7 @@ from DataVisualizationTool import DataVisualizationTool
 from ModelingTool import ModelingTool
 from RetrieverTool import RetrieverTool
 import sys
-# Custom CSS to mimic Gemini's clean, modern style
+# CSS for my cool interface
 CSS = """
 <style>
 /* General page styling */
@@ -96,14 +96,14 @@ def credit_risk_assistant(dataframe):
 
     # Initialize tools
     visualization_tool = DataVisualizationTool()
-    modeling_tool = ModelingTool()  # Assuming capped at 3 steps
+    modeling_tool = ModelingTool()  
     retriever_tool = RetrieverTool(pdf_directory="/Users/srinathmurali/Desktop/untitled folder 2")
     search = DuckDuckGoSearchTool()
     os.environ["GEMINI_API_KEY"]='I was too lazy to use a .env'
     model=LiteLLMModel(model_id='gemini/gemini-2.0-flash')
     primary_agent = CodeAgent(
         tools=[visualization_tool, modeling_tool, retriever_tool, search],
-        model=model,  # Replace with your model, e.g., "mistral-7b"
+        model=model,  
         additional_authorized_imports=["pandas"],
         add_base_tools=True
     )
@@ -118,7 +118,7 @@ def credit_risk_assistant(dataframe):
             "is_greeting_done": False
         }
 
-    # Welcome message (only shown once)
+    # Welcome message 
     if not st.session_state.conversation_state["is_greeting_done"]:
         with st.chat_message("assistant", avatar="🤖"):
             st.write("I’m here to help with credit risk analysis. What’s on your mind?")
@@ -147,11 +147,10 @@ def credit_risk_assistant(dataframe):
             st.session_state.conversation_state["history"].append("Bot: Goodbye!")
             return
 
-        # Add user input to history
+    
         st.session_state.conversation_state["history"].append(f"User: {user_input}")
         context = get_conversation_context(st.session_state.conversation_state["history"])
 
-        # Define the prompt
         prompt = f"""
         Conversation history:
         {context}
